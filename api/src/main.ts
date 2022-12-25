@@ -1,8 +1,47 @@
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { NestExpressApplication } from '@nestjs/platform-express';
+import { TypeormStore } from 'connect-typeorm/out';
+import dataSource from 'db/data-source';
+import * as session from 'express-session';
+import * as passport from 'passport';
 import { AppModule } from './app.module';
+import { databaseProviders } from './database/database.providers';
+import { Session } from './utils/typeorm';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  const { APP_PORT, COOKIE_SECRET } = process.env;
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  const sessionRepository = dataSource.getRepository(Session);
+
+  app.setGlobalPrefix('api');
+  app.enableCors({ origin: ['http://localhost:3000'], credentials: true });
+  app.useGlobalPipes(new ValidationPipe());
+  app.use(
+    session({
+      secret: COOKIE_SECRET,
+      saveUninitialized: false,
+      resave: false,
+      name: 'CHATIFYSESSID',
+      cookie: {
+        maxAge: 86400000, // cookie expires 1 day later
+      },
+      store: new TypeormStore().connect(sessionRepository),
+    }),
+  );
+
+  app.use(passport.initialize());
+  app.use(passport.session());
+
+  try {
+    await app.listen(APP_PORT, () => {
+      console.log(`Running on Port ${APP_PORT}`);
+      console.log(
+        `Running in ${process.env.ENVIRONMENT} mode: ${process.env.ENVIRONMENT_MESSAGE}`,
+      );
+    });
+  } catch (err) {
+    console.log(err);
+  }
 }
 bootstrap();

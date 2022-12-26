@@ -11,6 +11,10 @@ export const AuthenticatedRoute: FC<React.PropsWithChildren> = ({
     if(loading) {
         return <div>loading</div>;
     }
-    if(user) return <>{children}</>;
+
+    if(user) {
+        return <>{children}</>;
+    }
+
     return <Navigate to="/login" state={{from: location}} replace />
 }

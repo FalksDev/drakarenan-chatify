@@ -14,10 +14,9 @@ export const LoginForm = () => {
     const navigate = useNavigate();
 
     const onSubmit = async (data: UserCredentialsParams) => {
-        console.log(import.meta.env.VITE_REACT_APP_API_URL)
         const postParams: PostWithCallbackParams = { 
             postFunction: () => postLoginUser(data),
-            onSuccess: () => navigate("/")
+            onSuccess: () => navigate("/conversations")
         }
 
         await postWithCallback(postParams)

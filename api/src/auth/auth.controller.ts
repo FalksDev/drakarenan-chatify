@@ -33,7 +33,7 @@ import { CreateUserDto } from './dtos/CreateUser.dto';
     @UseGuards(LocalAuthGuard)
     @Post('login')
     login(@Res() res: Response) {
-      return res.send(HttpStatus.OK);
+      return res.sendStatus(HttpStatus.OK);
     }
   
     @Get('status')
@@ -46,7 +46,7 @@ import { CreateUserDto } from './dtos/CreateUser.dto';
     @UseGuards(AuthenticatedGuard)
     logout(@Req() req: AuthenticatedRequest, @Res() res: Response) {
         req.logout((err) => {
-            return err ? res.send(400) : res.send(200);
+            return err ? res.sendStatus(400) : res.sendStatus(200);
         });
     }
   }

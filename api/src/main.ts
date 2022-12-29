@@ -17,6 +17,7 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
   app.enableCors({ origin: ['http://localhost:5173'], credentials: true });
   app.useGlobalPipes(new ValidationPipe());
+  app.set('trust proxy', 'loopback');
   app.use(
     session({
       secret: COOKIE_SECRET,

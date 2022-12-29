@@ -4,7 +4,7 @@ export const AppLayout: FC<React.PropsWithChildren> = ({
     children
 }) => {
     return (
-    <div className="bg-slate-900 h-screen flex">
+    <div className="bg-zinc-900 h-screen flex">
         {children}
     </div>
     )

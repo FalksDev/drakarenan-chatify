@@ -9,7 +9,7 @@ import {
     Res,
     UseGuards,
   } from '@nestjs/common';
-  import { instanceToPlain } from 'class-transformer';
+  import { instanceToPlain, plainToInstance } from 'class-transformer';
   import { Request, Response } from 'express';
 import { IUserService } from 'src/user/interfaces/user';
   import { Routes, Services } from '../utils/constants';

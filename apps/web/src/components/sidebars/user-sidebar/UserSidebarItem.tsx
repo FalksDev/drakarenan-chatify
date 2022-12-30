@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import { postLogoutUser } from "utils/api";
 
 type Props = {
@@ -14,7 +15,10 @@ export const UserSidebarItem = ({navigateTo, toolTip, icon, isLoginIcon = false}
 
     const handleClick = async () => {
         if(navigateTo) navigate(navigateTo);
-        if(isLoginIcon) await postLogoutUser();
+        if(isLoginIcon) {
+            toast("You logged out.", { type: "info", icon: true })
+            await postLogoutUser();   
+        }
     }
 
     return (

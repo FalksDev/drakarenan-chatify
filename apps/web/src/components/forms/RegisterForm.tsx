@@ -64,25 +64,27 @@ export const RegisterForm = () => {
                         type="text" id="username" />
                     {usernameExists && <span className="text-red-500">This username already exists.</span>}
 
-                    <input
-                        {...register("firstName", { required: true })}
-                        placeholder="First Name"
-                        className="
-                            focus:outline-none 
-                          focus:bg-zinc-600 
-                            transition ease-in-out duration-300 
-                            mt-3 drop-shadow-md p-3 pl-5 pr-5 rounded-md bg-zinc-700 bg-opacity-50 text-zinc-200 placeholder:text-zinc-400"
-                        type="text" id="firstName" />
+                    <div className="grid grid-cols-2 gap-4 justify-items-stretch">
+                        <input
+                            {...register("firstName", { required: true })}
+                            placeholder="First Name"
+                            className="
+                                focus:outline-none 
+                            focus:bg-zinc-600 
+                                transition ease-in-out duration-300 
+                                mt-3 drop-shadow-md p-3 pl-5 pr-5 rounded-md bg-zinc-700 bg-opacity-50 text-zinc-200 placeholder:text-zinc-400"
+                            type="text" id="firstName" />
 
-                    <input
-                        {...register("lastName", { required: true })}
-                        placeholder="Last Name"
-                        className="
-                            focus:outline-none 
-                          focus:bg-zinc-600 
-                            transition ease-in-out duration-300 
-                            mt-3 drop-shadow-md p-3 pl-5 pr-5 rounded-md bg-zinc-700 bg-opacity-50 text-zinc-200 placeholder:text-zinc-400"
-                        type="text" id="lastName" />
+                        <input
+                            {...register("lastName", { required: true })}
+                            placeholder="Last Name"
+                            className="
+                                focus:outline-none 
+                            focus:bg-zinc-600 
+                                transition ease-in-out duration-300 
+                                mt-3 drop-shadow-md p-3 pl-5 pr-5 rounded-md bg-zinc-700 bg-opacity-50 text-zinc-200 placeholder:text-zinc-400"
+                            type="text" id="lastName" />
+                    </div>
 
                     <input
                         {...register("password", { required: true })}

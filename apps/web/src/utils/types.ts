@@ -31,3 +31,9 @@ export type User = {
   }
 
   export type ConversationType = "group" | "private";
+
+  export type FriendsSidebarItemType = {
+    id: string;
+    label: string;
+    pathname: string;
+  }

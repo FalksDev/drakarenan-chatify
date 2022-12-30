@@ -1,4 +1,4 @@
-export const GroupChannelPage = () => {
+export default function GroupChannelPage() {
     return (
         <></>
     )

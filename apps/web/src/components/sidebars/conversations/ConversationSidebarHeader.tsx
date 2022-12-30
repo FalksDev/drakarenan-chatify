@@ -32,8 +32,8 @@ export const ConversationSidebarHeader = () => {
                 onChange={handleConversationTextSearchChange}
                 placeholder="Search for conversations.."
             />
-            <Divider classes="mt-6 mb-4" />
-            <div className="grid grid-cols-2 gap-6">
+            <Divider classes="mt-3 mb-3" />
+            <div className="grid grid-cols-2 gap-3">
                 <Button onClick={() => handleTypeChange("private")} isActive={conversationType === "private"} size="small" text="Private" />
                 <Button onClick={() => handleTypeChange("group")} isActive={conversationType === "group"} size="small" text="Group" />
             </div>

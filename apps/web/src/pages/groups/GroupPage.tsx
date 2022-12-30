@@ -1,11 +1,11 @@
-import { ConversationSidebar } from "components/sidebars/conversation-sidebar/ConversationSidebar"
+import { ConversationSidebar } from "components/sidebars/conversations/ConversationSidebar"
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Outlet } from "react-router-dom"
 import { AppDispatch } from "store";
 import { updateType } from "store/selectedConversationTypeSlice";
 
-export const GroupPage = () => {
+export default function GroupPage () {
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {

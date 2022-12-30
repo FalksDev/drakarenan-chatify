@@ -1,19 +1,25 @@
-import { PropsWithChildren, useState } from 'react'
+import { PropsWithChildren, useState, lazy } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AuthenticatedRoute } from './components/AuthenticatedRoute';
-import AppPage from './pages/AppPage';
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
 import { AuthContext } from './utils/context/AuthContext';
 import { User } from './utils/types';
-import ConversationPage from './pages/conversations/ConversationPage';
-import ConversationChannelPage from './pages/conversations/ConversationChannelPage';
 import { Flip, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { GroupPage } from 'pages/groups/GroupPage';
-import { GroupChannelPage } from 'pages/groups/GroupChannelPage';
 import { Provider as ReduxProvider } from 'react-redux';
 import { store } from './store';
+import { Suspense } from 'react';
+import { LoadingPage } from 'pages/LoadingPage';
+import ConversationPage from './pages/conversations/ConversationPage';
+import ConversationChannelPage from './pages/conversations/ConversationChannelPage';
+import GroupPage from './pages/groups/GroupPage';
+import GroupChannelPage from './pages/groups/GroupChannelPage';
+import FriendsLayoutPage from 'pages/friends/FriendsLayoutPage';
+import { FriendRequestPage } from 'pages/friends/FriendRequestPage';
+import BlockedFriendsPage from 'pages/friends/BlockedFriendsPage';
+
+const AppPage = lazy(() => import("./pages/AppPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const RegisterPage = lazy(() => import("./pages/RegisterPage"));
 
 type Props = {
   user?: User;
@@ -39,10 +45,22 @@ function App() {
   return (
     <AppWithProviders user={user} setUser={setUser}>
       <Routes>
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={
+          <Suspense fallback={<LoadingPage />}>
+            <RegisterPage />
+          </Suspense>
+        } />
+        <Route path="/login" element={
+          <Suspense fallback={<LoadingPage />}>
+            <LoginPage />
+          </Suspense>
+        } />
         <Route path="/" element={<Navigate to="/conversations" />} />
-        <Route element={<AuthenticatedRoute children={<AppPage />} />}>
+        <Route element={<AuthenticatedRoute children={
+          <Suspense fallback={<LoadingPage/>}>
+            <AppPage />
+          </Suspense>
+        } />}>
           <Route path="conversations" element={<ConversationPage />}>
             <Route 
               path=":id"
@@ -58,6 +76,10 @@ function App() {
                 <GroupChannelPage />
               }
             />
+          </Route>
+          <Route path="friends" element={<FriendsLayoutPage/>}>
+            <Route path="requests" element={<FriendRequestPage />} />
+            <Route path="blocked" element={<BlockedFriendsPage />} />
           </Route>
         </Route>
       </Routes>

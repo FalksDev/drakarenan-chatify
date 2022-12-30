@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 import { AppDispatch } from 'store'
 import { updateType } from 'store/selectedConversationTypeSlice'
-import { ConversationSidebar } from '../../components/sidebars/conversation-sidebar/ConversationSidebar'
+import { ConversationSidebar } from '../../components/sidebars/conversations/ConversationSidebar'
 
 export default function ConversationPage() {
   const dispatch = useDispatch<AppDispatch>();

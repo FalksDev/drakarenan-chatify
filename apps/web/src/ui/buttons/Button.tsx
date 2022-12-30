@@ -8,6 +8,7 @@ type Props = {
     classes?: string;
     size?: "normal" | "small";
     isActive?: boolean;
+    icon?: React.ReactNode;
 }
 
 const Button = ({ 
@@ -18,6 +19,7 @@ const Button = ({
     isDisabled = false, 
     size = "normal", 
     isActive = false,
+    icon,
     ...rest } : Props) => {
 
     const typeStyle = buttonType === "solid" 
@@ -34,21 +36,26 @@ const Button = ({
 
     const sizeStyle = size === "normal"
         ? "p-3"
-        : "p-1";
+        : "p-2";
 
     const isActiveStyle = isActive
-        ? "bg-indigo-800 border-2 border-indigo-700"
+        ? "bg-indigo-800"
         : "";
-
+    
     return (
         <button
             disabled={isDisabled}
             className={`
                 enabled:transition ease-in-out duration-200
-                bg-opacity-95 rounded-md drop-shadow-md 
+                bg-opacity-95 rounded-md drop-shadow-md
                 ${typeStyle} ${weightStyle} ${disabledStyle} ${sizeStyle} ${isActiveStyle} ${classes}`} 
             {...rest}>
-            {text}
+            {icon 
+                ? <div className="grid grid-cols-4">
+                    <div className="text-2xl place-self-start ml-2">{icon}</div>
+                    <div className="place-self-center col-span-2">{text}</div>
+                  </div> 
+                : <span>{text}</span>}
         </button>
     )
 }

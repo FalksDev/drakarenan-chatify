@@ -6,10 +6,10 @@ export default function FriendsLayoutPage() {
     const { pathname } = useLocation();
 
     return (
-        <>
+        <div className="flex flex-1">
             <FriendsSidebar />
             {pathname === "/friends" && <FriendsPage />}
             <Outlet />
-        </>
+        </div>
     )
 } 

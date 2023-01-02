@@ -2,8 +2,11 @@ import { Exclude } from 'class-transformer';
 import {
   Column,
   Entity,
+  JoinColumn,
+  OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { UserPresence } from './UserPresence';
 
 @Entity({ name: 'users' })
 export class User {
@@ -25,4 +28,9 @@ export class User {
   @Column({ select: false })
   @Exclude()
   password: string;
+
+  @OneToOne(() => UserPresence, { cascade: ['insert', 'update'] })
+  @JoinColumn()
+  presence: UserPresence;
 }
+

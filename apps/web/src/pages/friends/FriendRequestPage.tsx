@@ -1,5 +1,9 @@
+import { FriendRequestList } from "components/friends/FriendRequestList"
+
 export const FriendRequestPage = () => {
     return (
-        <div>Request</div>
+        <div className="relative w-full">
+            <FriendRequestList />
+        </div>
     )
 }

@@ -7,8 +7,8 @@ import {
     Query,
   } from '@nestjs/common';
 import { Routes, Services } from 'src/utils/constants';
-import { UserAlreadyExists } from './exceptions/UserAlreadyExists';
-import { IUserService } from './interfaces/user';
+import { UserAlreadyExists } from '../exceptions/UserAlreadyExists';
+import { IUserService } from '../interfaces/user';
   
   @Controller(Routes.USER)
   export class UsersController {

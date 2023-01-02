@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { postLogoutUser } from "utils/api";
+import { SocketContext } from "utils/context/SocketContext";
 
 type Props = {
     navigateTo?: string;
@@ -12,11 +14,13 @@ type Props = {
 
 export const UserSidebarItem = ({navigateTo, toolTip, icon, isLoginIcon = false, isActive = false }: Props) => {
     const navigate = useNavigate();
+    const socket = useContext(SocketContext);
 
     const handleClick = async () => {
         if(navigateTo) navigate(navigateTo);
         if(isLoginIcon) {
-            toast("You logged out.", { type: "info", icon: true })
+            toast("You logged out.", { type: "info", icon: true });
+            socket.disconnect();
             await postLogoutUser();
         }
     }

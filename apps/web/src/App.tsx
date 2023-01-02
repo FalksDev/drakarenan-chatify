@@ -16,6 +16,7 @@ import GroupChannelPage from './pages/groups/GroupChannelPage';
 import FriendsLayoutPage from 'pages/friends/FriendsLayoutPage';
 import { FriendRequestPage } from 'pages/friends/FriendRequestPage';
 import BlockedFriendsPage from 'pages/friends/BlockedFriendsPage';
+import { socket, SocketContext } from 'utils/context/SocketContext';
 
 const AppPage = lazy(() => import("./pages/AppPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
@@ -34,7 +35,9 @@ function AppWithProviders({
   return (
     <ReduxProvider store={store}>
       <AuthContext.Provider value={{ user, updateAuthUser: setUser }}>
-        {children}
+        <SocketContext.Provider value={socket}>
+          {children}
+        </SocketContext.Provider>
       </AuthContext.Provider>
     </ReduxProvider>
   )

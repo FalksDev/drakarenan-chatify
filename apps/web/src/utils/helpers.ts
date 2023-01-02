@@ -1,4 +1,4 @@
-import { PostWithCallbackParams } from "./types";
+import { FriendRequest, FriendRequestDetailsType, PostWithCallbackParams, User } from "./types";
 
 export async function postWithCallback(params: PostWithCallbackParams) {
     try {
@@ -9,3 +9,21 @@ export async function postWithCallback(params: PostWithCallbackParams) {
         params.onError?.();
     }
 }
+
+export const getFriendRequestDetails = (
+    { receiver, sender }: FriendRequest,
+    user?: User
+  ): FriendRequestDetailsType =>
+    user?.id === receiver.id
+      ? {
+          status: 'Incoming Friend Request',
+          displayName: `${sender.firstName} ${sender.lastName}`,
+          user: sender,
+          incoming: true,
+        }
+      : {
+          status: 'Outgoing Friend Request',
+          displayName: `${receiver.firstName} ${receiver.lastName}`,
+          user: receiver,
+          incoming: false,
+        };

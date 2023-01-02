@@ -18,3 +18,11 @@ export const friendsSidebarItems: FriendsSidebarItemType[] = [
         pathname: "/friends/blocked"
     },
 ]
+
+export enum WebsocketEvents {
+    FRIEND_REQUEST_ACCEPTED = 'onFriendRequestAccepted',
+    FRIEND_REQUEST_REJECTED = 'onFriendRequestRejected',
+    FRIEND_REQUEST_CANCELLED = "onFriendRequestCancelled",
+    FRIEND_REQUEST_RECEIVED = "onFriendRequestReceived",
+    GET_ONLINE_FRIENDS = "getOnlineFriends",
+}

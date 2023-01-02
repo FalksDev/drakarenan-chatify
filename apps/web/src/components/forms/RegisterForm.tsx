@@ -109,7 +109,7 @@ export const RegisterForm = () => {
                     { !isPasswordStrongEnoguh && <span className="text-red-500">Passwords is not strong enough.</span>}
                     { !isSamePassword && <span className="text-red-500">Passwords doesn't match.</span>}
                     
-                    <Button isDisabled={usernameExists || (!isSamePassword || !isPasswordStrongEnoguh) } classes="mt-5" text="Register new account" type="submit" />
+                    <Button fontWeight="bold" isDisabled={usernameExists || (!isSamePassword || !isPasswordStrongEnoguh) } classes="mt-5" text="Register new account" type="submit" />
                 </div>
             </form>
         </div>

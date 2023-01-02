@@ -1,7 +1,7 @@
 type Props = {
     text: string;
     onClick?: () => void;
-    type?: "submit";
+    type?: "submit" | "button";
     buttonType?: "solid" | "outlined"
     fontWeight?: "normal" | "bold";
     isDisabled?: boolean;
@@ -24,7 +24,7 @@ const Button = ({
 
     const typeStyle = buttonType === "solid" 
         ? "bg-zinc-700 enabled:hover:bg-opacity-60"
-        : "border-2 border-zinc-700 enabled:hover:bg-zinc-700";
+        : "border-2 border-zinc-700 enabled:hover:bg-zinc-700 hover:border-zinc-700";
     
     const weightStyle = fontWeight === "normal"
         ? ""

@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form"
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Button, Divider } from "ui";
+import { SocketContext } from "utils/context/SocketContext";
 import { postLoginUser } from "../../utils/api";
 import { postWithCallback } from "../../utils/helpers";
 import { PostWithCallbackParams, UserCredentialsParams } from "../../utils/types"
@@ -18,6 +19,7 @@ export const LoginForm = () => {
     const navigate = useNavigate();
     const [search, setSearch] = useSearchParams();
     const username = search.get("username");
+    const socket = useContext(SocketContext);
 
     useEffect(() => {
         if(username){
@@ -35,6 +37,7 @@ export const LoginForm = () => {
         }
 
         await postWithCallback(postParams)
+        socket.connect();
     }
 
     return (

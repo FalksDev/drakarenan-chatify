@@ -8,7 +8,7 @@ export const FriendsSidebar = () => {
     const location = useLocation();
 
     return (
-        <SidebarLayout classes="p-2 pr-5 pl-5">
+        <SidebarLayout classes="p-2 pr-5 pl-5 flex-none">
             <FriendsSidebarHeader />
                 {friendsSidebarItems.map(item => {
                     return <FriendsSidebarItem isActive={location.pathname === item.pathname} item={item} key={item.id} />

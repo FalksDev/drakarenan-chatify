@@ -6,14 +6,16 @@ import dataSource from 'db/data-source';
 import * as session from 'express-session';
 import * as passport from 'passport';
 import { AppModule } from './app.module';
-import { databaseProviders } from './database/database.providers';
+import { WebsocketAdapter } from './gateway/dtos/gateway.adapter';
 import { Session } from './utils/typeorm';
 
 async function bootstrap() {
   const { APP_PORT, COOKIE_SECRET } = process.env;
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const sessionRepository = dataSource.getRepository(Session);
-
+  const adapter = new WebsocketAdapter(app);
+  app.useWebSocketAdapter(adapter);
+  
   app.setGlobalPrefix('api');
   app.enableCors({ origin: ['http://localhost:5173'], credentials: true });
   app.useGlobalPipes(new ValidationPipe());

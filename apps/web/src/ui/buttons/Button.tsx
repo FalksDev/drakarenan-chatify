@@ -31,7 +31,7 @@ const Button = ({
         : "font-semibold tracking-wider";
 
     const disabledStyle = isDisabled
-        ? "bg-opacity-20 text-zinc-400"
+        ? "bg-indigo-900 text-zinc-400"
         : "text-zinc-200";
 
     const sizeStyle = size === "normal"
@@ -48,7 +48,7 @@ const Button = ({
             className={`
                 enabled:transition ease-in-out duration-200
                 bg-opacity-95 rounded-md drop-shadow-md
-                ${typeStyle} ${weightStyle} ${disabledStyle} ${sizeStyle} ${isActiveStyle} ${classes}`} 
+                ${classes} ${typeStyle} ${weightStyle} ${disabledStyle} ${sizeStyle} ${isActiveStyle}`} 
             {...rest}>
             {icon 
                 ? <div className="grid grid-cols-4">

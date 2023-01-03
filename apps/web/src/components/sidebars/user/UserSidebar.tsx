@@ -12,7 +12,7 @@ export const UserSidebar = () => {
     const location  = useLocation();
 
     return (
-        <div className="h-full bg-zinc-800 flex-initial w-20 flex-none">
+        <div className="h-full bg-zinc-800 bg-opacity-75 w-20">
             <div className="grid grid-cols-1 h-full">
                 <div className="place-content-start">
                     <UserSidebarAvatar user={user} />

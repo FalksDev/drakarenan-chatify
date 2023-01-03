@@ -18,7 +18,7 @@ export default function FriendsPage() {
 
     useEffect(() => {
     socket.emit('getOnlineFriends');
-    
+
     const interval = setInterval(() => {
         socket.emit('getOnlineFriends');
     }, 10000);
@@ -47,7 +47,7 @@ export default function FriendsPage() {
     }, []);
 
     return(
-        <div className="relative w-full">
+        <div className="relative w-full bg-zinc-800 bg-opacity-75">
             <FriendList />
         </div>
     )

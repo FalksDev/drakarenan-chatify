@@ -15,9 +15,11 @@ export default function ConversationPage() {
   }, [])
 
   return (
-    <>
+    <div className="flex flex-row flex-1">
         <ConversationSidebar />
-        <Outlet />
-    </>
+        <div className="bg-zinc-800 bg-opacity-75 grow">
+          <Outlet />
+        </div>
+    </div>
   )
 }

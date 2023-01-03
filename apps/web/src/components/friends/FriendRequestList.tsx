@@ -10,7 +10,7 @@ export const FriendRequestList = () => {
       
     return (
         <div className="flex flex-col m-6">
-            {friendRequests.length === 0 && <div>No incoming friend requests.</div>}
+            {friendRequests.length === 0 && <div>No incoming or outgoing friend requests.</div>}
             {friendRequests.map((request) => {
                 return <FriendRequestItem item={request} key={request.id} />
             })}

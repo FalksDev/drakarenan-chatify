@@ -16,7 +16,7 @@ export const FriendList = () => {
     );
 
     return (
-        <div className="m-6 flex flex-col">
+        <div className="m-6 flex flex-col flex-grow h-5/6 overflow-y-auto">
             {onlineFriends.length > 0 && <span className="mb-2 text-lg font-semibold tracking-wide">Online ({onlineFriends.length})</span>}
             {onlineFriends.map((friend) => {
                 return <FriendListItem friend={friend} key={friend.id} online={true}/>

@@ -7,9 +7,14 @@ interface Props {
     placeholder: string;
     value: string;
     onChange: React.ChangeEventHandler<HTMLInputElement>;
+    size?: "small" | "normal";
 }
 
-const TextInput = ({ placeholder, value, onChange } : Props ) => {
+const TextInput = ({ placeholder, value, onChange, size = "normal" } : Props ) => {
+    const sizeStyle = size === "normal"
+        ? "p-3 pl-5 pr-5"
+        : "p-2.5 pl-3.5 pr-3.5 text-sm";
+
     return (
         <div>
             <input 
@@ -17,11 +22,12 @@ const TextInput = ({ placeholder, value, onChange } : Props ) => {
                 placeholder={placeholder} 
                 value={value} 
                 onChange={onChange}
-                className="
-                    focus:outline-none 
+                className={`
+                    focus:outline-none
                     focus:bg-zinc-600 
                     transition ease-in-out duration-300 
-                    w-full drop-shadow-md p-3 pl-5 pr-5 rounded-md bg-zinc-700 text-zinc-200 placeholder:text-zinc-400" 
+                    w-full drop-shadow-md  rounded-md bg-zinc-700 bg-opacity-50 text-zinc-200 placeholder:text-zinc-400
+                    ${sizeStyle}`}
             />
         </div>
     )

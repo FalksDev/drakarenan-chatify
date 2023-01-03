@@ -1,6 +1,4 @@
 import { useContext } from "react";
-import { useDispatch } from "react-redux";
-import { AppDispatch } from "store";
 import { AuthContext } from "utils/context/AuthContext";
 import { Friend } from "utils/types"
 
@@ -11,7 +9,6 @@ type Props = {
 
 export const FriendListItem = ({ friend, online } : Props) => {
     const { user } = useContext(AuthContext);
-    const dispatch = useDispatch<AppDispatch>();
 
     const friendUserInstance =
         user?.id === friend.sender.id ? friend.receiver : friend.sender;

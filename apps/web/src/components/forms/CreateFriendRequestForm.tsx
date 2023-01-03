@@ -37,8 +37,8 @@ export const CreateFriendRequestForm = () => {
         <form className="mt-3" onSubmit={onSubmit}>
             <TextInput placeholder="Username" onChange={(e) => setUsername(e.target.value)} value={username} />
             <div className="flex justify-between">
-                <Button type="button" classes="mt-8 border-indigo-700 w-1/3" buttonType="outlined" size="small" text="Cancel" onClick={() => setShowModal(false)} />
-                <Button isDisabled={!username} classes="w-1/3 mt-8 bg-indigo-700" buttonType="solid" size="small" text="Send" type="submit" />
+                {/* <Button type="button" classes="mt-8 border-indigo-700 w-1/3" buttonType="outlined" size="small" text="Cancel" onClick={() => setShowModal(false)} /> */}
+                <Button isDisabled={!username} classes="w-full p-3 mt-3 bg-indigo-600" buttonType="solid" fontWeight="bold" text="Send" type="submit" />
             </div>
         </form>
     )

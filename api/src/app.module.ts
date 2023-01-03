@@ -7,9 +7,14 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import dataSource from 'db/data-source';
 import { AuthModule } from './auth/auth.module';
+import { ConversationModule } from './conversation/conversation.module';
+import { ExistsModule } from './exists/exists.module';
 import { FriendRequestsModule } from './friend-request/friend-request.module';
 import { FriendModule } from './friend/friend.module';
 import { GatewayModule } from './gateway/dtos/gateway.module';
+import { GroupModule } from './group/group.module';
+import { MessageAttachmentModule } from './message-attachment/message-attachment.module';
+import { MessagesModule } from './message/message.module';
 import { UserModule } from './user/user.module';
 import { ThrottlerBehindProxyGuard } from './utils/throttler';
 import entities, { FriendRequest } from './utils/typeorm';
@@ -25,7 +30,12 @@ if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
     FriendRequestsModule,
     ConfigModule.forRoot({ envFilePath }),
     PassportModule.register({ session: true }),
+    ConversationModule,
     GatewayModule,
+    MessagesModule,
+    GroupModule,
+    MessageAttachmentModule,
+    ExistsModule,
     ThrottlerModule.forRoot({
       ttl: 10,
       limit: 10,

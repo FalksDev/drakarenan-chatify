@@ -1,0 +1,2 @@
+[] - Implement "onFriendRemoved".
+        - There is no current implementation of removing a friend.

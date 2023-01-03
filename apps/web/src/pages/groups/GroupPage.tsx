@@ -16,7 +16,9 @@ export default function GroupPage () {
     return (
         <>
             <ConversationSidebar />
-            <Outlet />
+            <div className="bg-zinc-800 bg-opacity-75 grow">
+                <Outlet />
+            </div>
         </>
     )
 }

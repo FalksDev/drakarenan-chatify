@@ -1,0 +1,1 @@
+export const scrollbarStyle = "scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-track-rounded-lg scrollbar-thumb-indigo-700 scrollbar-track-zinc-900";

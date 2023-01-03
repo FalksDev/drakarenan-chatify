@@ -9,7 +9,9 @@ export default function FriendsLayoutPage() {
         <div className="flex flex-1">
             <FriendsSidebar />
             {pathname === "/friends" && <FriendsPage />}
-            <Outlet />
+            <div className="bg-zinc-800 bg-opacity-75 grow">
+                <Outlet />
+            </div>
         </div>
     )
 } 

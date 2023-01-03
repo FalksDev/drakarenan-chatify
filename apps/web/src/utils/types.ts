@@ -30,7 +30,7 @@ export type User = {
     onError?: () => void;
   }
 
-  export type ConversationType = "group" | "private";
+  export type ConversationType =  "group" | "private";
 
   export type FriendsSidebarItemType = {
     id: string;

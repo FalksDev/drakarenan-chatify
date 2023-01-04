@@ -97,6 +97,9 @@ import { IConversationService } from "src/conversation/interfaces/conversation";
       client.leave(`conversation-${data.conversationId}`);
       console.log(client.rooms);
       client.to(`conversation-${data.conversationId}`).emit('userLeave');
+
+      //INFO: We also need to stop the typing-status if the user leaves.
+      client.to(`conversation-${data.conversationId}`).emit('onTypingStop');
     }
 
     @SubscribeMessage('onGroupJoin')

@@ -7,10 +7,13 @@ import { Button, Divider, IconButton, TextInput } from "ui"
 import { ConversationType } from "utils/types";
 import { TbMessagePlus } from "react-icons/tb";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import { ModalContext } from "utils/context/ModalContext";
+import { CreateConversationModal } from "components/modals/CreateConversationModal";
 
 export const ConversationSidebarHeader = () => {
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
+    const [showModal, setShowModal] = useState(false);
     
     const [conversationTextSearch, setConversationTextSearch] = useState("");
     const handleConversationTextSearchChange = (e: any) => {
@@ -40,7 +43,7 @@ export const ConversationSidebarHeader = () => {
                 </div>
                 <div className="justify-self-end my-auto">
                     {conversationTypeState.type === "private"
-                        ? <IconButton icon={<TbMessagePlus />}/>
+                        ? <IconButton onClick={() => setShowModal(true)} icon={<TbMessagePlus />}/>
                         : <IconButton icon={<AiOutlineUsergroupAdd />}/>}
                 </div>
             </div>
@@ -49,6 +52,10 @@ export const ConversationSidebarHeader = () => {
                 <Button onClick={() => handleTypeChange("private")} isActive={conversationTypeState.type === "private"} size="small" text="Private" />
                 <Button onClick={() => handleTypeChange("group")} isActive={conversationTypeState.type === "group"} size="small" text="Group" />
             </div>
+
+            <ModalContext.Provider value={{ isOpen: showModal, setShowModal: setShowModal }}>
+                <CreateConversationModal />
+            </ModalContext.Provider>
         </div>
     )
 }

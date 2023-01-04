@@ -10,6 +10,7 @@ interface Props {
     size?: "small" | "normal";
 }
 
+// TODO: We need to remove "onChange" and handle a "setValue" instead.
 const TextInput = ({ placeholder, value, onChange, size = "normal" } : Props ) => {
     const sizeStyle = size === "normal"
         ? "p-3 pl-5 pr-5"

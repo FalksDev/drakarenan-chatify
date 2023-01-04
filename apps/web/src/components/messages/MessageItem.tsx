@@ -1,19 +1,27 @@
+import { AuthContext } from "utils/context/AuthContext";
+import { ConversationMessage, MessageType } from "utils/types"
 import { MessageItemBody } from "./MessageItemBody"
 import { MessageItemHeader } from "./MessageItemHeader"
+import { useContext } from "react";
+import { UserAvatar } from "components/avatars/UserAvatar";
+import { MessageContext } from "./MessageContext";
 
+// TODO: Replace this avatar with UserAvatar.tsx
 export const MessageItem = () => {
+    const { user } = useContext(AuthContext);
+    const { message, showMessageHeader } = useContext(MessageContext)
+    const showMessageHeaderStyle = !showMessageHeader
+        ? "mb-0"
+        : "mt-6";
+
     return (
-        <div className="container">
+        <div className={`container ${showMessageHeaderStyle}`}>
             <div className="flex flex-row">
-                <div>
-                    <div className="bg-zinc-700 mr-6 p-3 h-14 w-14 rounded-full shadow-lg text-center">
-                        <div className="text-2xl">
-                            AF
-                        </div>
-                    </div>
+                <div className="mr-6">
+                    {showMessageHeader && <UserAvatar user={message?.author!} /> }
                 </div>
                 <div className="flex flex-col">
-                    <MessageItemHeader />
+                    {showMessageHeader && <MessageItemHeader />}
                     <MessageItemBody />
                 </div>
             </div>

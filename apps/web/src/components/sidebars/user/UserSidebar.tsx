@@ -6,6 +6,7 @@ import { AiOutlineUsergroupAdd, AiOutlineMessage } from 'react-icons/ai'
 import { UserSidebarAvatar } from "./UserSidebarAvatar";
 import { Divider } from "ui";
 import { useLocation } from "react-router-dom";
+import { UserAvatar } from "components/avatars/UserAvatar";
 
 export const UserSidebar = () => {
     const { user } = useContext(AuthContext);
@@ -15,7 +16,9 @@ export const UserSidebar = () => {
         <div className="h-full bg-zinc-800 bg-opacity-75 w-20">
             <div className="grid grid-cols-1 h-full">
                 <div className="place-content-start">
-                    <UserSidebarAvatar user={user} />
+                    <div className="pl-3 pr-3 pt-3">
+                        <UserAvatar user={user!} />
+                    </div>
                     <Divider classes="m-3" />
                     <div className="">
                         <UserSidebarItem

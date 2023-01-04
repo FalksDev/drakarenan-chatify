@@ -29,7 +29,7 @@ export const selectedConversationTypeSlice = createSlice({
 });
 
 export const selectType = (state: RootState) => {
-    state.selectedConversationType.type;
+    return state.selectedConversationType.type;
 }
 
 export const { updateType } = selectedConversationTypeSlice.actions;

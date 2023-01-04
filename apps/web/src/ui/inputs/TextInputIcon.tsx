@@ -6,9 +6,16 @@ interface Props {
     onChange?: React.ChangeEventHandler<HTMLInputElement>;
     onAddIconClick?: () => void;
     onEmojiIconClick?: () => void;
+    onEnter: () => void;
 }
 
-const TextInputIcon = ({placeholder, value, onChange, onAddIconClick, onEmojiIconClick} : Props) => {
+const TextInputIcon = ({placeholder, value, onChange, onAddIconClick, onEmojiIconClick, onEnter} : Props) => {
+    const handleKeyDown = (e: any) => {
+        if(e.key == "Enter"){
+            onEnter();
+        }
+    }
+
     return (
         <div className="flex flex-row p-4 drop-shadow-md w-full rounded-md bg-zinc-900 bg-opacity-70 text-zinc-200 placeholder:text-zinc-400">
             <div 
@@ -17,6 +24,7 @@ const TextInputIcon = ({placeholder, value, onChange, onAddIconClick, onEmojiIco
                 <BsPlusCircleDotted />
             </div>
             <input 
+                onKeyDown={handleKeyDown}
                 autoFocus
                 value={value}
                 placeholder={placeholder}

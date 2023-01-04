@@ -1,4 +1,4 @@
-import { FriendRequest, FriendRequestDetailsType, PostWithCallbackParams, User } from "./types";
+import { Conversation, FriendRequest, FriendRequestDetailsType, PostWithCallbackParams, User } from "./types";
 
 export async function postWithCallback(params: PostWithCallbackParams) {
     try {
@@ -27,3 +27,12 @@ export const getFriendRequestDetails = (
           user: receiver,
           incoming: false,
         };
+
+        export const getRecipientFromConversation = (
+            conversation?: Conversation,
+            user?: User
+          ) => {
+            return user?.id === conversation?.creator.id
+              ? conversation?.recipient
+              : conversation?.creator;
+          };

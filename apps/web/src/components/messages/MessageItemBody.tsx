@@ -1,11 +1,15 @@
+import { useContext } from "react"
+import { MessageContext } from "./MessageContext"
+
 export const MessageItemBody = () => {
+    const { message, showMessageHeader } = useContext(MessageContext)
+    const showMessageHeaderStyle = !showMessageHeader
+        ? "ml-14"
+        : "";
+
     return (
-        <div className="leading-7">
-            Tjenare, jag tänkte lägga mig snart, men du kan vara uppe om du vill.
-            <br></br>
-            asdasdasdas
-            <br></br>
-            asdasdsadasda
+        <div className={`leading-7 whitespace-pre-wrap ${showMessageHeaderStyle}`}>
+            {message.content}
         </div>
     )
 }

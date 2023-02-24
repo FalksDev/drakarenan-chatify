@@ -17,7 +17,7 @@ import { IConversationService } from "src/conversation/interfaces/conversation";
 
 @WebSocketGateway({
     cors: {
-      origin: ['http://localhost:5173'],
+      origin: ['http://localhost:5173', 'https://drakarenan-chatify.vercel.app/'],
       credentials: true,
     },
     pingInterval: 10000,

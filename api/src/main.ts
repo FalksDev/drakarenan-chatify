@@ -27,7 +27,7 @@ async function bootstrap() {
     credentials: true
   };
 
-  app.enableCors(options);
+  app.enableCors({ origin: ['http://localhost:5173', 'https://drakarenan-chatify.vercel.app/'], credentials: true });
   app.useGlobalPipes(new ValidationPipe({forbidUnknownValues: false}));
   app.set('trust proxy', 'loopback');
   app.use(

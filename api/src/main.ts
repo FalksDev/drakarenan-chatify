@@ -18,7 +18,16 @@ async function bootstrap() {
   app.useWebSocketAdapter(adapter);
   
   app.setGlobalPrefix('api');
-  app.enableCors({ origin: ['http://localhost:5173', 'https://drakarenan-chatify.vercel.app/'], credentials: true });
+
+  const options = {
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    credentials: true
+  };
+
+  app.enableCors(options);
   app.useGlobalPipes(new ValidationPipe({forbidUnknownValues: false}));
   app.set('trust proxy', 'loopback');
   app.use(

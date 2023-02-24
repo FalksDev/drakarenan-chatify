@@ -1,8 +1,12 @@
 import { Module } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { databaseProviders } from './database.providers';
 
 @Module({
-  providers: [...databaseProviders],
+  providers: [
+    ConfigService,
+    ...databaseProviders
+  ],
   exports: [...databaseProviders],
 })
 

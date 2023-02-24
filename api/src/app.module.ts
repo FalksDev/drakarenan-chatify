@@ -28,7 +28,7 @@ if (process.env.ENVIRONMENT === 'PRODUCTION') envFilePath = '.env.production';
     AuthModule,
     FriendModule,
     FriendRequestsModule,
-    ConfigModule.forRoot({ envFilePath }),
+    ConfigModule.forRoot({ envFilePath, isGlobal: true }),
     PassportModule.register({ session: true }),
     ConversationModule,
     GatewayModule,

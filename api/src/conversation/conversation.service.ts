@@ -97,7 +97,7 @@ export class ConversationService implements IConversationService {
         const newMessage = this.messageRepository.create({
           content,
           conversation,
-          author: creator,
+          author: creator
         });
         await this.messageRepository.save(newMessage);
         return conversation;

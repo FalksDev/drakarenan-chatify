@@ -2,7 +2,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { TypeormStore } from 'connect-typeorm/out';
-import dataSource from 'db/data-source';
+import dataSource from '../db/data-source';
 import * as session from 'express-session';
 import * as passport from 'passport';
 import { AppModule } from './app.module';

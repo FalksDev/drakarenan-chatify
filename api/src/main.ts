@@ -30,6 +30,9 @@ async function bootstrap() {
   app.enableCors({
     allowedHeaders: ['content-type'],
     origin: 'https://drakarenan-chatify.vercel.app',
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
     credentials: true,
   });
 

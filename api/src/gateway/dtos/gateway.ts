@@ -20,6 +20,7 @@ import { IConversationService } from "../../conversation/interfaces/conversation
       allowedHeaders: ['content-type'],
       origin: 'https://drakarenan-chatify.vercel.app',
       credentials: true,
+      methods: ["GET", "POST"]
     },
     pingInterval: 10000,
     pingTimeout: 15000,

@@ -1,11 +1,11 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { DatabaseModule } from "src/database/database.module";
-import { FriendModule } from "src/friend/friend.module";
-import { UserModule } from "src/user/user.module";
-import { Repositories, Services } from "src/utils/constants";
-import { Friend, FriendRequest, User } from "src/utils/typeorm";
-import { repositoryResolver } from "src/utils/typeorm/repository.resolver";
+import { DatabaseModule } from "../database/database.module";
+import { FriendModule } from "../friend/friend.module";
+import { UserModule } from "../user/user.module";
+import { Repositories, Services } from "../utils/constants";
+import { Friend, FriendRequest, User } from "../utils/typeorm";
+import { repositoryResolver } from "../utils/typeorm/repository.resolver";
 import { FriendRequestController } from "./friend-request.controller";
 import { FriendRequestService } from "./friend-request.service";
 

@@ -1,14 +1,14 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { ConversationModule } from "src/conversation/conversation.module";
-import { DatabaseModule } from "src/database/database.module";
-import { FriendModule } from "src/friend/friend.module";
-import { ImageStorageModule } from "src/image-storage/image-storage.module";
-import { MessageAttachmentModule } from "src/message-attachment/message-attachment.module";
-import { Repositories, Services } from "src/utils/constants";
-import { Conversation } from "src/utils/typeorm/entities/Conversation";
-import { Message } from "src/utils/typeorm/entities/Message";
-import { repositoryResolver } from "src/utils/typeorm/repository.resolver";
+import { ConversationModule } from "../conversation/conversation.module";
+import { DatabaseModule } from "../database/database.module";
+import { FriendModule } from "../friend/friend.module";
+import { ImageStorageModule } from "../image-storage/image-storage.module";
+import { MessageAttachmentModule } from "../message-attachment/message-attachment.module";
+import { Repositories, Services } from "../utils/constants";
+import { Conversation } from "../utils/typeorm/entities/Conversation";
+import { Message } from "../utils/typeorm/entities/Message";
+import { repositoryResolver } from "../utils/typeorm/repository.resolver";
 import { MessageController } from "./message.controller";
 import { MessageService } from "./message.service";
 

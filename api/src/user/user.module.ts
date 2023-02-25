@@ -1,11 +1,11 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { DatabaseModule } from "src/database/database.module";
-import { ImageStorageModule } from "src/image-storage/image-storage.module";
-import { Repositories, Services } from "src/utils/constants";
-import { User, UserPresence } from "src/utils/typeorm";
-import { Profile } from "src/utils/typeorm/entities/Profile";
-import { repositoryResolver } from "src/utils/typeorm/repository.resolver";
+import { DatabaseModule } from "../database/database.module";
+import { ImageStorageModule } from "../image-storage/image-storage.module";
+import { Repositories, Services } from "../utils/constants";
+import { User, UserPresence } from "../utils/typeorm";
+import { Profile } from "../utils/typeorm/entities/Profile";
+import { repositoryResolver } from "../utils/typeorm/repository.resolver";
 import { UserPresenceController } from "./controllers/user-presence.controller";
 import { UserProfileController } from "./controllers/user-profile.controller";
 import { UsersController } from "./controllers/user.controller";

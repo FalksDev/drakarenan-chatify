@@ -12,7 +12,7 @@ import { Session } from './utils/typeorm';
 async function bootstrap() {
   const { APP_PORT, COOKIE_SECRET } = process.env;
   
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, { cors: true });
   const sessionRepository = dataSource.getRepository(Session);
   const adapter = new WebsocketAdapter(app);
   app.useWebSocketAdapter(adapter);
@@ -27,7 +27,8 @@ async function bootstrap() {
     credentials: true
   };
 
-  app.enableCors({ origin: ['http://localhost:5173', 'https://drakarenan-chatify.vercel.app/'], credentials: true });
+  // app.enableCors({ origin: ['http://localhost:5173', 'https://drakarenan-chatify.vercel.app/'], credentials: true });
+  // app.enableCors(options);
   app.useGlobalPipes(new ValidationPipe({forbidUnknownValues: false}));
   app.set('trust proxy', 'loopback');
   app.use(

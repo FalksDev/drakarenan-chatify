@@ -16,10 +16,11 @@ import { IGroupService } from "../../group/interfaces/group";
 import { IConversationService } from "../../conversation/interfaces/conversation";
 
 @WebSocketGateway({
-    cors: {
-      origin: ['http://localhost:5173', 'https://drakarenan-chatify.vercel.app/'],
-      credentials: true,
-    },
+    // cors: {
+    //   origin: ['http://localhost:5173', 'https://drakarenan-chatify.vercel.app/'],
+    //   credentials: true,
+    // },
+    cors: true,
     pingInterval: 10000,
     pingTimeout: 15000,
   })

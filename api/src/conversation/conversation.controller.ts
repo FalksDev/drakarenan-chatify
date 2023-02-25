@@ -1,10 +1,10 @@
 import { Controller, UseGuards, Inject, Get, Post, Body, Param } from "@nestjs/common";
 import { EventEmitter2 } from "@nestjs/event-emitter";
 import { SkipThrottle } from "@nestjs/throttler";
-import { AuthenticatedGuard } from "src/auth/utils/Guards";
-import { Routes, Services } from "src/utils/constants";
-import { AuthUser } from "src/utils/decorators";
-import { User } from "src/utils/typeorm";
+import { AuthenticatedGuard } from "../auth/utils/Guards";
+import { Routes, Services } from "../utils/constants";
+import { AuthUser } from "../utils/decorators";
+import { User } from "../utils/typeorm";
 import { CreateConversationDto } from "./dtos/CreateConversation.dto";
 import { IConversationService } from "./interfaces/conversation";
 

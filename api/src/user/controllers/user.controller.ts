@@ -6,7 +6,7 @@ import {
     Inject,
     Query,
   } from '@nestjs/common';
-import { Routes, Services } from 'src/utils/constants';
+import { Routes, Services } from '../../utils/constants';
 import { UserAlreadyExists } from '../exceptions/UserAlreadyExists';
 import { IUserService } from '../interfaces/user';
   

@@ -2,13 +2,13 @@ import { Controller, Inject, UseInterceptors, Post, UploadedFiles, Param, ParseI
 import { EventEmitter2 } from "@nestjs/event-emitter";
 import { FileFieldsInterceptor } from "@nestjs/platform-express";
 import { Throttle, SkipThrottle } from "@nestjs/throttler";
-import { CreateMessageDto } from "src/message/dtos/CreateMessage.dto";
-import { EditMessageDto } from "src/message/dtos/EditMessage.dto";
-import { EmptyMessageException } from "src/message/exceptions/EmptyMessage";
-import { Routes, Services } from "src/utils/constants";
-import { AuthUser } from "src/utils/decorators";
-import { User } from "src/utils/typeorm";
-import { Attachment } from "src/utils/types";
+import { CreateMessageDto } from "../../message/dtos/CreateMessage.dto";
+import { EditMessageDto } from "../../message/dtos/EditMessage.dto";
+import { EmptyMessageException } from "../../message/exceptions/EmptyMessage";
+import { Routes, Services } from "../../utils/constants";
+import { AuthUser } from "../../utils/decorators";
+import { User } from "../../utils/typeorm";
+import { Attachment } from "../../utils/types";
 import { IGroupMessageService } from "../interfaces/group-message";
 
 @Controller(Routes.GROUP_MESSAGE)

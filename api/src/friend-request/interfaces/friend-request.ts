@@ -1,5 +1,5 @@
-import { FriendRequest } from "src/utils/typeorm";
-import { AcceptFriendRequestResponse, CancelFriendRequestParams, CreateFriendParams, FriendRequestParams } from "src/utils/types";
+import { FriendRequest } from "../../utils/typeorm";
+import { AcceptFriendRequestResponse, CancelFriendRequestParams, CreateFriendParams, FriendRequestParams } from "../../utils/types";
 
 export interface IFriendRequestService {
     accept(params: FriendRequestParams): Promise<AcceptFriendRequestResponse>;

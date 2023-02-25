@@ -1,8 +1,8 @@
 import { Body, Controller, Inject, Patch, UseGuards } from "@nestjs/common";
-import { AuthenticatedGuard } from "src/auth/utils/Guards";
-import { Routes, Services } from "src/utils/constants";
-import { AuthUser } from "src/utils/decorators";
-import { User } from "src/utils/typeorm";
+import { AuthenticatedGuard } from "../../auth/utils/Guards";
+import { Routes, Services } from "../../utils/constants";
+import { AuthUser } from "../../utils/decorators";
+import { User } from "../../utils/typeorm";
 import { UpdatePresenceStatusDto } from "../dtos/UpdatePresenceStatusDto.dto";
 import { IUserPresenceService } from "../interfaces/user-presence";
 

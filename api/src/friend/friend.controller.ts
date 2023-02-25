@@ -1,9 +1,9 @@
 import { Controller, Delete, Get, Inject, Param, ParseIntPipe } from "@nestjs/common";
 import { EventEmitter2 } from "@nestjs/event-emitter";
 import { SkipThrottle } from "@nestjs/throttler";
-import { Routes, ServerEvents, Services } from "src/utils/constants";
-import { AuthUser } from "src/utils/decorators";
-import { User } from "src/utils/typeorm";
+import { Routes, ServerEvents, Services } from "../utils/constants";
+import { AuthUser } from "../utils/decorators";
+import { User } from "../utils/typeorm";
 import { IFriendService } from "./interfaces/friend";
 
 @SkipThrottle()

@@ -1,9 +1,9 @@
 import { HttpException, HttpStatus, Inject, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Repositories } from "src/utils/constants";
-import { hashPassword } from "src/utils/helpers";
-import { User } from "src/utils/typeorm";
-import { CreateUserDetails, FindUserOptions, FindUserParams } from "src/utils/types";
+import { Repositories } from "../../utils/constants";
+import { hashPassword } from "../../utils/helpers";
+import { User } from "../../utils/typeorm";
+import { CreateUserDetails, FindUserOptions, FindUserParams } from "../../utils/types";
 import { Repository } from "typeorm";
 import { IUserService } from "../interfaces/user";
 

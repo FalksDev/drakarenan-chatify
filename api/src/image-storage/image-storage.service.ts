@@ -1,9 +1,9 @@
 import { S3 } from "@aws-sdk/client-s3";
 import { Inject, Injectable } from "@nestjs/common";
-import { Services } from "src/utils/constants";
-import { compressImage } from "src/utils/helpers";
-import { GroupMessageAttachment } from "src/utils/typeorm/entities/GroupMessageAttachment";
-import { UploadGroupMessageAttachmentParams, UploadImageParams, UploadMessageAttachmentParams } from "src/utils/types";
+import { Services } from "../utils/constants";
+import { compressImage } from "../utils/helpers";
+import { GroupMessageAttachment } from "../utils/typeorm/entities/GroupMessageAttachment";
+import { UploadGroupMessageAttachmentParams, UploadImageParams, UploadMessageAttachmentParams } from "../utils/types";
 import { IImageStorageService } from "./interfaces/image-storage";
 
 @Injectable()

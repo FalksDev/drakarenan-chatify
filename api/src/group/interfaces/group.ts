@@ -1,6 +1,6 @@
-import { User } from "src/utils/typeorm";
-import { Group } from "src/utils/typeorm/entities/Group";
-import { CreateGroupParams, FetchGroupsParams, AccessParams, TransferOwnerParams, UpdateGroupDetailsParams } from "src/utils/types";
+import { User } from "../../utils/typeorm";
+import { Group } from "../../utils/typeorm/entities/Group";
+import { CreateGroupParams, FetchGroupsParams, AccessParams, TransferOwnerParams, UpdateGroupDetailsParams } from "../../utils/types";
 
 export interface IGroupService {
     createGroup(params: CreateGroupParams);

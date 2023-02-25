@@ -1,5 +1,5 @@
-import { Group } from "src/utils/typeorm/entities/Group";
-import { AddGroupRecipientParams, AddGroupUserResponse, RemoveGroupRecipientParams, RemoveGroupUserResponse, LeaveGroupParams, CheckUserGroupParams } from "src/utils/types";
+import { Group } from "../../utils/typeorm/entities/Group";
+import { AddGroupRecipientParams, AddGroupUserResponse, RemoveGroupRecipientParams, RemoveGroupUserResponse, LeaveGroupParams, CheckUserGroupParams } from "../../utils/types";
 
 export interface IGroupRecipientService {
     addGroupRecipient(

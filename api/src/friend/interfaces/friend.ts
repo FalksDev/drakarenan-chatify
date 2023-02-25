@@ -1,5 +1,5 @@
-import { Friend } from 'src/utils/typeorm';
-import { DeleteFriendRequestParams } from 'src/utils/types';
+import { Friend } from '../../utils/typeorm';
+import { DeleteFriendRequestParams } from '../../utils/types';
 
 export interface IFriendService {
   getFriends(id: number): Promise<Friend[]>;

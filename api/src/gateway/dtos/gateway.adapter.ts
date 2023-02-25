@@ -1,6 +1,6 @@
 import { IoAdapter } from "@nestjs/platform-socket.io";
 import dataSource from "../../../db/data-source";
-import { Session, User } from "src/utils/typeorm";
+import { Session, User } from "../../utils/typeorm";
 import { AuthenticatedSocket } from "./interfaces/AuthenticatedSocket";
 import * as cookieParser from 'cookie-parser';
 import * as cookie from 'cookie';

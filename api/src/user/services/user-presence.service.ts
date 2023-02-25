@@ -1,8 +1,8 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Repositories, Services } from "src/utils/constants";
-import { User, UserPresence } from "src/utils/typeorm";
-import { UpdateStatusMessageParams } from "src/utils/types";
+import { Repositories, Services } from "../../utils/constants";
+import { User, UserPresence } from "../../utils/typeorm";
+import { UpdateStatusMessageParams } from "../../utils/types";
 import { Repository } from "typeorm";
 import { IUserService } from "../interfaces/user";
 import { IUserPresenceService } from "../interfaces/user-presence";

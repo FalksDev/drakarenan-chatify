@@ -1,9 +1,9 @@
 import { Controller, Inject, Patch, UseInterceptors, UploadedFiles, Body } from "@nestjs/common";
 import { FileFieldsInterceptor } from "@nestjs/platform-express";
-import { Routes, Services, UserProfileFileFields } from "src/utils/constants";
-import { AuthUser } from "src/utils/decorators";
-import { User } from "src/utils/typeorm";
-import { UpdateUserProfileParams, UserProfileFiles } from "src/utils/types";
+import { Routes, Services, UserProfileFileFields } from "../../utils/constants";
+import { AuthUser } from "../../utils/decorators";
+import { User } from "../../utils/typeorm";
+import { UpdateUserProfileParams, UserProfileFiles } from "../../utils/types";
 import { UpdateUserProfileDto } from "../dtos/UpdateUserProfile.dto";
 import { IUserProfile } from "../interfaces/user-profile";
 

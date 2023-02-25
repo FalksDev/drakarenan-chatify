@@ -2,10 +2,10 @@ import { Controller, Inject, Post, Body, Get, Param, Patch, UseInterceptors, Par
 import { EventEmitter2 } from "@nestjs/event-emitter";
 import { FileInterceptor } from "@nestjs/platform-express";
 import { SkipThrottle } from "@nestjs/throttler";
-import { Routes, Services } from "src/utils/constants";
-import { AuthUser } from "src/utils/decorators";
-import { User } from "src/utils/typeorm";
-import { Attachment } from "src/utils/types";
+import { Routes, Services } from "../../utils/constants";
+import { AuthUser } from "../../utils/decorators";
+import { User } from "../../utils/typeorm";
+import { Attachment } from "../../utils/types";
 import { CreateGroupDto } from "../dtos/CreateGroup.dto";
 import { TransferOwnerDto } from "../dtos/TransferOwner.dto";
 import { UpdateGroupDetailsDto } from "../dtos/UpdateGroupDetails.dto";

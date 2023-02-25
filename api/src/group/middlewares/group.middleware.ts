@@ -1,7 +1,7 @@
 import { Injectable, NestMiddleware, Inject } from "@nestjs/common";
 import { NextFunction } from "express";
-import { Services } from "src/utils/constants";
-import { AuthenticatedRequest } from "src/utils/types";
+import { Services } from "../../utils/constants";
+import { AuthenticatedRequest } from "../../utils/types";
 import { GroupNotFoundException } from "../exceptions/GroupNotFound";
 import { InvalidGroupException } from "../exceptions/InvalidGroup";
 import { IGroupService } from "../interfaces/group";

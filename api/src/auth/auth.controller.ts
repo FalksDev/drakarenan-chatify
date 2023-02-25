@@ -11,7 +11,7 @@ import {
   } from '@nestjs/common';
   import { instanceToPlain, plainToInstance } from 'class-transformer';
   import { Request, Response } from 'express';
-import { IUserService } from 'src/user/interfaces/user';
+import { IUserService } from '../user/interfaces/user';
   import { Routes, Services } from '../utils/constants';
   import { AuthenticatedRequest } from '../utils/types';
   import { IAuthService } from './auth';

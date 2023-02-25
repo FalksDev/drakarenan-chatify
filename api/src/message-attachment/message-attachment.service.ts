@@ -1,10 +1,10 @@
 import { Injectable, Inject } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { IImageStorageService } from "src/image-storage/interfaces/image-storage";
-import { Repositories, Services } from "src/utils/constants";
-import { GroupMessageAttachment } from "src/utils/typeorm/entities/GroupMessageAttachment";
-import { MessageAttachment } from "src/utils/typeorm/entities/MessageAttachment";
-import { Attachment } from "src/utils/types";
+import { IImageStorageService } from "../image-storage/interfaces/image-storage";
+import { Repositories, Services } from "../utils/constants";
+import { GroupMessageAttachment } from "../utils/typeorm/entities/GroupMessageAttachment";
+import { MessageAttachment } from "../utils/typeorm/entities/MessageAttachment";
+import { Attachment } from "../utils/types";
 import { Repository } from "typeorm";
 import { IMessageAttachmentService } from "./interfaces/message-attachment";
 

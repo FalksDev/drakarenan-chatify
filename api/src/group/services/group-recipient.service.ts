@@ -1,7 +1,7 @@
 import { Injectable, Inject, HttpException, HttpStatus } from "@nestjs/common";
-import { IUserService } from "src/user/interfaces/user";
-import { Services } from "src/utils/constants";
-import { AddGroupRecipientParams, RemoveGroupRecipientParams, CheckUserGroupParams, LeaveGroupParams } from "src/utils/types";
+import { IUserService } from "../../user/interfaces/user";
+import { Services } from "../../utils/constants";
+import { AddGroupRecipientParams, RemoveGroupRecipientParams, CheckUserGroupParams, LeaveGroupParams } from "../../utils/types";
 import { GroupNotFoundException } from "../exceptions/GroupNotFound";
 import { GroupParticipantNotFound } from "../exceptions/GroupParticipantNotFound";
 import { NotGroupOwnerException } from "../exceptions/NotGroupOwner";

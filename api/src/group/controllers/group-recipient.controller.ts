@@ -1,9 +1,9 @@
 import { Controller, Inject, Post, Param, ParseIntPipe, Body, Delete } from "@nestjs/common";
 import { EventEmitter2 } from "@nestjs/event-emitter";
 import { SkipThrottle } from "@nestjs/throttler";
-import { Routes, Services } from "src/utils/constants";
-import { AuthUser } from "src/utils/decorators";
-import { User } from "src/utils/typeorm";
+import { Routes, Services } from "../../utils/constants";
+import { AuthUser } from "../../utils/decorators";
+import { User } from "../../utils/typeorm";
 import { AddGroupRecipientDto } from "../dtos/AddGroupRecipient.dto";
 import { IGroupRecipientService } from "../interfaces/group-recipient";
 

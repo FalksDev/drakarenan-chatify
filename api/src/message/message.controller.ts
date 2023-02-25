@@ -2,10 +2,10 @@ import { Controller, Inject, UseInterceptors, Post, UploadedFiles, Param, ParseI
 import { EventEmitter2 } from "@nestjs/event-emitter";
 import { FileFieldsInterceptor } from "@nestjs/platform-express";
 import { Throttle, SkipThrottle } from "@nestjs/throttler";
-import { Routes, Services } from "src/utils/constants";
-import { AuthUser } from "src/utils/decorators";
-import { User } from "src/utils/typeorm";
-import { Attachment } from "src/utils/types";
+import { Routes, Services } from "../utils/constants";
+import { AuthUser } from "../utils/decorators";
+import { User } from "../utils/typeorm";
+import { Attachment } from "../utils/types";
 import { CreateMessageDto } from "./dtos/CreateMessage.dto";
 import { EditMessageDto } from "./dtos/EditMessage.dto";
 import { EmptyMessageException } from "./exceptions/EmptyMessage";

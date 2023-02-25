@@ -1,9 +1,9 @@
 import { Body, Controller, Delete, Get, Inject, Param, ParseIntPipe, Patch, Post } from "@nestjs/common";
 import { EventEmitter2 } from "@nestjs/event-emitter";
 import { Throttle } from "@nestjs/throttler";
-import { Routes, ServerEvents, Services } from "src/utils/constants";
-import { AuthUser } from "src/utils/decorators";
-import { User } from "src/utils/typeorm";
+import { Routes, ServerEvents, Services } from "../utils/constants";
+import { AuthUser } from "../utils/decorators";
+import { User } from "../utils/typeorm";
 import { CreateFriendDto } from "./dtos/CreateFriend.dto";
 import { IFriendRequestService } from "./interfaces/friend-request";
 

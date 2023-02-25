@@ -1,5 +1,5 @@
-import { GroupMessage } from "src/utils/typeorm/entities/GroupMessage";
-import { CreateGroupMessageParams, DeleteGroupMessageParams, EditGroupMessageParams } from "src/utils/types";
+import { GroupMessage } from "../../utils/typeorm/entities/GroupMessage";
+import { CreateGroupMessageParams, DeleteGroupMessageParams, EditGroupMessageParams } from "../../utils/types";
 
 export interface IGroupMessageService {
     createGroupMessage(params: CreateGroupMessageParams);

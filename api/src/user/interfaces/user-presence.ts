@@ -1,5 +1,5 @@
-import { User, UserPresence } from "src/utils/typeorm";
-import { UpdateStatusMessageParams } from "src/utils/types";
+import { User, UserPresence } from "../../utils/typeorm";
+import { UpdateStatusMessageParams } from "../../utils/types";
 
 export interface IUserPresenceService {
     createPresence(): Promise<UserPresence>;

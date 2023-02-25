@@ -1,19 +1,19 @@
 import { Inject } from "@nestjs/common";
 import { ConnectedSocket, MessageBody, OnGatewayConnection, OnGatewayDisconnect, SubscribeMessage, WebSocketGateway, WebSocketServer } from "@nestjs/websockets";
-import { IFriendService } from "src/friend/interfaces/friend";
-import { ServerEvents, Services, WebsocketEvents } from "src/utils/constants";
+import { IFriendService } from "../../friend/interfaces/friend";
+import { ServerEvents, Services, WebsocketEvents } from "../../utils/constants";
 import { IGatewaySessionManager } from "./gateway.session";
 import { Server } from 'socket.io';
 import { AuthenticatedSocket } from "./interfaces/AuthenticatedSocket";
 import { OnEvent } from "@nestjs/event-emitter";
-import { FriendRequest } from "src/utils/typeorm";
-import { AcceptFriendRequestResponse, AddGroupUserResponse, CreateGroupMessageResponse, CreateMessageResponse, RemoveGroupUserResponse } from "src/utils/types";
-import { Conversation } from "src/utils/typeorm/entities/Conversation";
-import { Group } from "src/utils/typeorm/entities/Group";
-import { GroupMessage } from "src/utils/typeorm/entities/GroupMessage";
-import { Message } from "src/utils/typeorm/entities/Message";
-import { IGroupService } from "src/group/interfaces/group";
-import { IConversationService } from "src/conversation/interfaces/conversation";
+import { FriendRequest } from "../../utils/typeorm";
+import { AcceptFriendRequestResponse, AddGroupUserResponse, CreateGroupMessageResponse, CreateMessageResponse, RemoveGroupUserResponse } from "../../utils/types";
+import { Conversation } from "../../utils/typeorm/entities/Conversation";
+import { Group } from "../../utils/typeorm/entities/Group";
+import { GroupMessage } from "../../utils/typeorm/entities/GroupMessage";
+import { Message } from "../../utils/typeorm/entities/Message";
+import { IGroupService } from "../../group/interfaces/group";
+import { IConversationService } from "../../conversation/interfaces/conversation";
 
 @WebSocketGateway({
     cors: {

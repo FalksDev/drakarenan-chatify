@@ -1,10 +1,10 @@
 import { Controller, Inject, Get, Param, ParseIntPipe, HttpException, HttpStatus } from "@nestjs/common";
 import { EventEmitter2 } from "@nestjs/event-emitter";
-import { IConversationService } from "src/conversation/interfaces/conversation";
-import { IUserService } from "src/user/interfaces/user";
-import { Routes, Services } from "src/utils/constants";
-import { AuthUser } from "src/utils/decorators";
-import { User } from "src/utils/typeorm";
+import { IConversationService } from "../conversation/interfaces/conversation";
+import { IUserService } from "../user/interfaces/user";
+import { Routes, Services } from "../utils/constants";
+import { AuthUser } from "../utils/decorators";
+import { User } from "../utils/typeorm";
 
 @Controller(Routes.EXISTS)
 export class ExistsController {

@@ -1,5 +1,5 @@
 import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
-import { IUserService } from 'src/user/interfaces/user';
+import { IUserService } from '../user/interfaces/user';
 import { Services } from '../utils/constants';
 import { compareHash } from '../utils/helpers';
 import { ValidateUserDetails } from '../utils/types';

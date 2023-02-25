@@ -48,6 +48,7 @@ async function bootstrap() {
       name: 'CHATIFYSESSID',
       cookie: {
         maxAge: 86400000, // cookie expires 1 day later
+        sameSite: 'none'
       },
       store: new TypeormStore().connect(sessionRepository),
     }),
